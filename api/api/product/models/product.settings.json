@@ -1,0 +1,105 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product",
+  "info": {
+    "name": "Product"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "collectPhone": {
+      "type": "boolean",
+      "default": true,
+      "required": false
+    },
+    "currency": {
+      "type": "enumeration",
+      "enum": [
+        "TL",
+        "USD"
+      ],
+      "default": "TL",
+      "required": true
+    },
+    "dateAvailable": {
+      "type": "date"
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 1000
+    },
+    "domain": {
+      "type": "enumeration",
+      "enum": [
+        "test",
+        "live"
+      ],
+      "default": "test",
+      "required": true
+    },
+    "files": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "inStock": {
+      "type": "boolean",
+      "default": false
+    },
+    "isShippable": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "lowStockAlert": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "minimumOrderable": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "notificationEmails": {
+      "type": "json"
+    },
+    "regularPrice": {
+      "type": "decimal",
+      "required": true
+    },
+    "discountPrice": {
+      "type": "decimal"
+    },
+    "quantity": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "quantitySold": {
+      "type": "biginteger",
+      "default": "0"
+    },
+    "redirectUrl": {
+      "type": "string"
+    },
+    "isUnlimited": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
